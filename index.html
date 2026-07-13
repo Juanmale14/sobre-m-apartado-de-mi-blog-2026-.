@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | El Loco de la Mochila - Juan Manuel López Esparrell</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES DE DISEÑO PASTEL --- */
+        :root {
+            --bg-body: #f7f9fc;
+            --bg-card: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --primary: #93c5fd; /* Azul Pastel */
+            --primary-dark: #60a5fa;
+            --secondary: #c084fc; /* Violeta Pastel */
+            --secondary-light: #f3e8ff;
+            --mint: #a7f3d0; /* Menta Pastel */
+            --rose: #fbcfe8; /* Rosa Pastel */
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 2px 4px rgba(148, 163, 184, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(148, 163, 184, 0.15);
+            --shadow-lg: 0 20px 35px -10px rgba(148, 163, 184, 0.2);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        /* --- ESTILOS GENERALES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* --- CONTENEDORES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- HEADER / NAVEGACIÓN --- */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(247, 249, 252, 0.85);
+            backdrop-filter: blur(12px);
+            border-b: 1px solid var(--border-color);
+            z-index: 100;
+            height: 80px;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background-color: var(--secondary-light);
+            color: var(--secondary);
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+        }
+
+        .logo-sub {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-weight: normal;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .nav-link span {
+            color: var(--secondary);
+            font-size: 11px;
+        }
+
+        /* --- BOTÓN DE CONTACTO (ESTILO PASTEL) --- */
+        .btn-contact {
+            background-color: var(--primary);
+            color: #1e3a8a;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: var(--font-sans);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(147, 197, 253, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(147, 197, 253, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 0;
+            position: relative;
+            background: radial-gradient(circle at top right, rgba(147, 197, 253, 0.12), transparent 60%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr; /* Distribución de columnas optimizada */
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge-education {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background-color: var(--secondary-light);
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            color: #6b21a8;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 850;
+            line-height: 1.1;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 580px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Tarjeta de Perfil Hero - Modificada más pequeña y compacta */
+        .profile-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px; /* Relleno más ajustado */
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            max-width: 320px; /* Ancho máximo delimitado */
+            width: 100%;
+            margin-left: auto; /* Empujado hacia el extremo derecho */
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px; /* Margen inferior reducido */
+        }
+
+        .avatar-circle {
+            width: 96px; /* Diámetro de imagen más compacto */
+            height: 96px;
+            border-radius: 50%;
+            background-color: var(--secondary-light);
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Centrado preciso de la persona en el marco de la tarjeta superior */
+        .avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%; 
+            display: block;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* Espaciado más sutil entre filas */
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 6px;
+            font-size: 13px; /* Tamaño de letra ligeramente más pequeño */
+        }
+
+        .info-row span:first-child {
+            font-weight: 700;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 11px;
+        }
+
+        .info-row span:last-child {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* --- SECCIONES COMUNES --- */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .section-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- SECCIÓN SOBRE MÍ --- */
+        .about {
+            background-color: var(--bg-card);
+            border-y: 1px solid var(--border-color);
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            font-size: 17px;
+            color: var(--text-main);
+            text-align: justify; /* Textos de biografía justificados */
+        }
+
+        .about-text p {
+            margin-bottom: 24px;
+        }
+
+        .about-text strong {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* --- SECCIÓN EXPERIENCIA --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .stat-card:nth-child(odd) .stat-num {
+            color: var(--primary-dark);
+        }
+
+        .stat-card:nth-child(even) .stat-num {
+            color: var(--secondary);
+        }
+
+        .stat-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* --- ESTILOS DEL CARRUSEL INTERACTIVO --- */
+        .carousel-outer {
+            margin: 40px auto;
+            max-width: 650px; /* Tamaño comedido */
+            width: 100%;
+        }
+
+        .carousel-title-meta {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .carousel-title-meta i {
+            color: var(--primary-dark);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            aspect-ratio: 16 / 9;
+        }
+
+        @media (max-width: 640px) {
+            .carousel-container {
+                aspect-ratio: 4 / 3;
+            }
+        }
+
+        .carousel-slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0f172a;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--secondary-light);
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .carousel-arrow:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .carousel-arrow.prev { left: 12px; }
+        .carousel-arrow.next { right: 12px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px; /* Desplazado elegantemente al borde inferior */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: var(--secondary);
+            transform: scale(1.2);
+            box-shadow: 0 0 6px rgba(192, 132, 252, 0.5);
+            border-color: rgba(192, 132, 252, 0.2);
+        }
+
+        /* Terminal de Ponencias (Modificado a Claro) */
+        .terminal {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background-color: #f87171; }
+        .terminal-dot.yellow { background-color: #facc15; }
+        .terminal-dot.green { background-color: #4ade80; }
+
+        .terminal-title {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .terminal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .terminal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .terminal-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .lecture-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+
+        .lecture-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lecture-cat {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .lecture-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .lecture-loc {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* --- SECCIÓN PUBLICACIONES --- */
+        .publications {
+            background-color: var(--bg-card);
+            border-y: 1px solid var(--border-color);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--text-main);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(147, 197, 253, 0.3);
+        }
+
+        .pub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .pub-card {
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary);
+        }
+
+        .pub-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .pub-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .pub-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .pub-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+            font-size: 12px;
+        }
+
+        .pub-source {
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+        }
+
+        .pub-link {
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pub-link:hover {
+            color: var(--secondary);
+        }
+
+        /* --- SECCIÓN MEDIOS --- */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .radio-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+        }
+
+        .radio-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .radio-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #f0fdfa;
+            color: #0d9488;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .radio-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .radio-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background-color: #f0fdfa;
+            color: #0d9488;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            display: inline-block;
+        }
+
+        .btn-full:hover {
+            background-color: #0d9488;
+            color: white;
+        }
+
+        .podcast-list-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .podcast-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .podcast-title-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .podcast-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--secondary-light);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .podcast-header h4 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .podcast-header p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .podcast-badge {
+            background-color: var(--secondary-light);
+            color: #6b21a8;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .episodes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .episode-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+
+        .episode-row:hover {
+            border-color: var(--secondary);
+            background-color: white;
+        }
+
+        .episode-info span {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .episode-info h5 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .episode-btn {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 12px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            border-radius: 4px;
+            color: var(--text-main);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .episode-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        /* --- CONTACT SECTOR --- */
+        .contact-section {
+            background: linear-gradient(135deg, #eff6ff 0%, #faf5ff 100%);
+            border-top: 1px solid var(--border-color);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-box h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .btn-large-contact {
+            background-color: var(--secondary);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 14px rgba(192, 132, 252, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-large-contact:hover {
+            background-color: #a855f7;
+            box-shadow: 0 6px 20px rgba(192, 132, 252, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .footer-link {
+            color: var(--primary-dark);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .social-link:hover {
+            background-color: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        /* --- RESPONSIVIDAD --- */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .profile-card {
+                margin: 0 auto; /* Centrar tarjeta en pantallas pequeñas */
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-container {
+                padding: 0 16px;
+            }
+            .nav-menu {
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navegación -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+                <div>
+                    <span class="logo-text">EL LOCO DE LA MOCHILA</span>
+                    <span class="logo-sub">Prof. Juan Manuel López Esparrell</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#sobre-mi" class="nav-link"><span>&lt;01&gt;</span> SOBRE MÍ</a>
+                <a href="#experiencia" class="nav-link"><span>&lt;02&gt;</span> EXPERIENCIA</a>
+                <a href="#publicaciones" class="nav-link"><span>&lt;03&gt;</span> PUBLICACIONES</a>
+                <a href="#medios" class="nav-link"><span>&lt;04&gt;</span> MEDIOS</a>
+            </nav>
+
+            <div>
+                <a href="mailto:lopezesparrell@gmail.com" class="btn-contact">
+                    <i class="fa-solid fa-envelope"></i> Contactar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Presentación -->
+    <section class="hero">
+        <div class="container hero-grid">
+            
+            <div class="hero-content">
+                <div class="badge-education">
+                    <span class="badge-dot"></span>
+                    EL AUTOR DEL BLOG EL LOCO DE LA MOCHILA
+                </div>
+                <h1 class="hero-title">
+                    <span>SOBRE MÍ</span>
+                </h1>
+                
+                <div class="hero-buttons">
+                    <a href="#sobre-mi" class="btn-contact" style="padding: 10px 20px; font-size: 13px;">
+                        <i class="fa-solid fa-circle-user"></i> Sobre Mí
+                    </a>
+                    <a href="#experiencia" class="btn-secondary">
+                        <i class="fa-solid fa-briefcase"></i> Experiencia
+                    </a>
+                    <a href="#publicaciones" class="btn-secondary">
+                        <i class="fa-solid fa-book-open"></i> Publicaciones
+                    </a>
+                    <a href="#medios" class="btn-secondary">
+                        <i class="fa-solid fa-hashtag"></i> Medios
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ficha resumida - Modificada a más compacta y alineada -->
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <div class="avatar-circle">
+                        <!-- Corregida la ruta para apuntar a la carpeta Imagenes de GitHub -->
+                        <img src="./Imagenes/Imagen01.jpg" alt="Juan Manuel López Esparrell">
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <div class="info-row">
+                        <span>PROFESOR:</span>
+                        <span>J. M. López Esparrell</span>
+                    </div>
+                    <div class="info-row">
+                        <span>ESPECIALIDAD:</span>
+                        <span>Lengua y Literatura (Sec.)</span>
+                    </div>
+                    <div class="info-row">
+                        <span>CENTRO:</span>
+                        <span>IES Francisco Giner de los Ríos</span>
+                    </div>
+                    <div class="info-row">
+                        <span>UBICACIÓN:</span>
+                        <span>Motril, Granada (Andalucía)</span>
+                    </div>
+                    <div class="info-row">
+                        <span>COMPETENCIA:</span>
+                        <span style="color: #059669;"><i class="fa-solid fa-award"></i> Nivel C1 Digital</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección: Sobre Mí -->
+    <section id="sobre-mi" class="section-padding about">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-tag">&lt;// 01. BIOGRAFÍA&gt;</span>
+                <h2 class="section-title">El motor pedagógico del proyecto</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-container">
+                
+                <div class="about-text">
+                    <p>
+                        Soy <strong>Juan Manuel López Esparrell</strong>, profesor de <strong>Lengua Castellana y Literatura</strong> de Secundaria. Actualmente desempeño mi labor docente en el <strong>IES Francisco Giner de los Ríos</strong> de Motril (Granada), donde además soy jefe del Departamento de Formación, Evaluación e Innovación educativa desde hace ya algunos años.
+                    </p>
+
+                    <!-- Párrafo antes destacado convertido a formato normal fluido -->
+                    <p>
+                        Cuento con una dilatada experiencia en el mundo de la formación del profesorado. He colaborado con numerosos centros del profesorado de Andalucía (CEP de Motril, CEP de Antequera, CEP de Priego-Montilla, CEP de Vélez-Málaga, CEP de Úbeda, CEP de Córdoba, entre otros) en diversos proyectos de formación. 
+                    </p>
+
+                    <p>
+                        En los últimos cursos me he centrado sobre todo en formaciones sobre el <strong>uso educativo y ético de la inteligencia artificial</strong>, pero también he impedido formaciones dirigidas al profesorado sobre evaluación formativa con el cuaderno de Séneca, diseño de situaciones de aprendizaje, currículo LOMLOE, competencia en comunicación lingüística, etc.
+                    </p>
+
+                    <p>
+                        Además, soy el autor del blog <strong>“El loco de la mochila”</strong>. Aquí comparto mis reflexiones, materiales y experiencias de aula sobre temas educativos. También he publicado artículos de divulgación educativa en varias revistas (<em>Cuadernos de Pedagogía</em>, <em>Revista Andalucía Educativa</em>, <em>Educación 3.0</em>...) y he colaborado en podcasts educativos (en Radio Andalucía Información, Inteligencia Artificial y Educación...).
+                    </p>
+
+                    <p>
+                        Me apasiona mi trabajo. Siempre estoy leyendo, investigando o escribiendo sobre educación, buscando aprender para mejorar el trabajo en el aula.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Experiencia -->
+    <section id="experiencia" class="section-padding">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-tag">&lt;// 02. EXPERIENCIA Y COMPETENCIAS&gt;</span>
+                <h2 class="section-title">Trayectoria y Competencias</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Nuevo Párrafo Detallado sobre Competencias (Justificado y con palabras en Negrita) -->
+            <div style="background-color: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+                <p style="font-size: 16px; color: var(--text-main); margin-bottom: 0; text-align: justify;">
+                    Mi experiencia recibiendo y realizando formaciones es extensa. En el plano de la capacitación digital, poseo el <strong>nivel C1 de competencia digital docente</strong>. Asimismo, en el año <strong>2026</strong>, he tenido el honor de colaborar activamente con el <strong>INTEF</strong> (Instituto Nacional de Tecnologías Educativas y de Formación del Profesorado) en la elaboración de las <strong>pruebas de la Evaluación General del Sistema (EGS)</strong>. En la actualidad, acumulo más de mil trescientas horas como <strong>asistente</strong> a formaciones, más de setecientas como <strong>ponente</strong>, más de cuatrocientas cincuenta como <strong>tutor</strong> de cursos y más de cuatrocientas cincuenta como <strong>coordinador</strong> de grupos de trabajo. Además, he sido también <strong>autor</strong> y <strong>editor</strong> de varios cursos del Aula Virtual de Formación del Profesorado de la Junta de Andalucía.
+                </p>
+            </div>
+
+            <!-- Carrusel Interactivo de Fotografías Reales (Rutas relativas normalizadas para GitHub) -->
+            <div class="carousel-outer">
+                <div class="carousel-title-meta">
+                    <i class="fa-solid fa-chalkboard-user"></i> GALERÍA DE ACTIVIDADES Y EVENTOS DE FORMACIÓN
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <!-- Diapositiva 1 (Imagen02.jpg) -->
+                        <div class="carousel-slide active">
+                            <img src="./Imagenes/Imagen02.jpg" alt="Reunión práctica de formación con profesorado">
+                        </div>
+                        <!-- Diapositiva 2 (Imagen03.JPG) -->
+                        <div class="carousel-slide">
+                            <img src="./Imagenes/Imagen03.JPG" alt="Ponencia en CEP Vélez-Málaga sobre cuaderno Séneca">
+                        </div>
+                        <!-- Diapositiva 3 (Imagen04.JPG) -->
+                        <div class="carousel-slide">
+                            <img src="./Imagenes/Imagen04.JPG" alt="Presentación didáctica en pizarra digital">
+                        </div>
+                        <!-- Diapositiva 4 (Imagen05.jpg) -->
+                        <div class="carousel-slide">
+                            <img src="./Imagenes/Imagen05.jpg" alt="Taller práctico en aula de profesores">
+                        </div>
+                        <!-- Diapositiva 5 (Imagen06.JPG) -->
+                        <div class="carousel-slide">
+                            <img src="./Imagenes/Imagen06.JPG" alt="Uso de iSéneca para móviles en el CEP">
+                        </div>
+                    </div>
+                    
+                    <!-- Flechas de navegación -->
+                    <button class="carousel-arrow prev" onclick="moveCarousel(-1)" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-arrow next" onclick="moveCarousel(1)" aria-label="Siguiente">&#10095;</button>
+                    
+                    <!-- Puntos de control (Dots) -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <span class="carousel-dot active" onclick="setCarouselSlide(0)"></span>
+                        <span class="carousel-dot" onclick="setCarouselSlide(1)"></span>
+                        <span class="carousel-dot" onclick="setCarouselSlide(2)"></span>
+                        <span class="carousel-dot" onclick="setCarouselSlide(3)"></span>
+                        <span class="carousel-dot" onclick="setCarouselSlide(4)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Estadísticas (Con textos de encabezado corregidos) -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-tag">// FORMACIÓN RECIBIDA</span>
+                    <div class="stat-num">+1.300</div>
+                    <span class="stat-desc">Horas lectivas completadas como asistente</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-tag">// FORMACIÓN IMPARTIDA</span>
+                    <div class="stat-num">+700</div>
+                    <span class="stat-desc">Horas liderando ponencias y seminarios</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-tag">// TUTORIZACIÓN VIRTUAL</span>
+                    <div class="stat-num">+450</div>
+                    <span class="stat-desc">Horas como tutor de cursos andaluces</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-tag">// COORDINACIÓN DE GRUPOS DE TRABAJO</span>
+                    <div class="stat-num">+450</div>
+                    <span class="stat-desc">Horas coordinando grupos de trabajo docente</span>
+                </div>
+            </div>
+
+            <!-- Terminal de Ponencias CEP -->
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                    </div>
+                    <div class="terminal-title">HISTORIAL_PONENCIAS_CEP.EXE</div>
+                </div>
+
+                <div class="terminal-grid">
+                    <div class="terminal-column">
+                        <div class="lecture-card">
+                            <span class="lecture-cat">NUEVAS TECNOLOGÍAS // IA</span>
+                            <h4>Uso educativo de la inteligencia artificial: introducción a su uso en el día a día docente</h4>
+                            <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Priego-Montilla y CEP de Úbeda</span>
+                        </div>
+
+                        <div class="lecture-card">
+                            <span class="lecture-cat">RADIOS ESCOLARES</span>
+                            <h4>Uso de la IA para la Red de Radios Escolares</h4>
+                            <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Córdoba</span>
+                        </div>
+
+                        <div class="lecture-card">
+                            <span class="lecture-cat">COMUNICACIÓN DIGITAL</span>
+                            <h4>Uso de la IA para el programa Comunica</h4>
+                            <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Granada</span>
+                        </div>
+                    </div>
+
+                    <div class="terminal-column">
+                        <div class="lecture-card">
+                            <span class="lecture-cat">METODOLOGÍAS ACTIVAS</span>
+                            <h4>Uso de la IA para el aprendizaje cooperativo</h4>
+                            <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Motril</span>
+                        </div>
+
+                        <div class="lecture-card">
+                            <span class="lecture-cat">EVALUACIÓN DIGITAL // SÉNECA</span>
+                            <h4>Evaluación formativa con el cuaderno de Séneca</h4>
+                            <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Vélez-Málaga</span>
+                        </div>
+
+                        <div class="lecture-card">
+                            <span class="lecture-cat">GAMIFICACIÓN DIDÁCTICA</span>
+                            <h4>Transformando la educación: Hogwarts educativo: magia en la escuela</h4>
+                            <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Úbeda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lecture-card" style="margin-top: 24px;">
+                    <span class="lecture-cat">EDUCACIÓN INCLUSIVA</span>
+                    <h4>Uso inclusivo de la inteligencia artificial para la comprensión lectora y el razonamiento matemático</h4>
+                    <span class="lecture-loc"><i class="fa-solid fa-map-marker-alt"></i> CEP de Córdoba</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección: Publicaciones -->
+    <section id="publicaciones" class="section-padding publications">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-tag">&lt;// 03. PUBLICACIONES&gt;</span>
+                <h2 class="section-title">Difusión Pedagógica y Didáctica</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Filtros de Publicaciones -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="applyFilter('all')">Todas</button>
+                <button class="filter-btn" onclick="applyFilter('ia')">Inteligencia Artificial</button>
+                <button class="filter-btn" onclick="applyFilter('evaluation')">Evaluación y Rúbricas</button>
+                <button class="filter-btn" onclick="applyFilter('methodology')">Metodología y Didáctica</button>
+            </div>
+
+            <!-- Grid de Tarjetas -->
+            <div class="pub-grid" id="pubGrid">
+                
+                <!-- Pub 1 -->
+                <div class="pub-card" data-category="ia">
+                    <div>
+                        <div class="pub-meta">
+                            <span>ARTÍCULO</span>
+                            <span>2025</span>
+                        </div>
+                        <h4 class="pub-title">IA y evaluación. Cómo la IA es una aliada para aprender a aprender.</h4>
+                        <p class="pub-desc">Análisis práctico sobre cómo emplear sistemas generativos de forma crítica para enriquecer la metacognición en Secundaria.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Revista Entera2.0 (N. 11)</span>
+                        <a href="https://ciberespiral.org/es/entera2-0-num-11/" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 2 -->
+                <div class="pub-card" data-category="methodology">
+                    <div>
+                        <div class="pub-meta">
+                            <span>DIVULGACIÓN</span>
+                            <span>2025</span>
+                        </div>
+                        <h4 class="pub-title">Profesores excelentes</h4>
+                        <p class="pub-desc">Estudio reflexivo sobre el papel y la implicación motivacional de los docentes en las aulas de hoy.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Cuadernos de Pedagogía (N. 562)</span>
+                        <a href="https://dialnet.unirioja.es/servlet/articulo?codigo=10050932" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 3 -->
+                <div class="pub-card" data-category="ia">
+                    <div>
+                        <div class="pub-meta">
+                            <span>ARTÍCULO</span>
+                            <span>2024</span>
+                        </div>
+                        <h4 class="pub-title">Las rúbricas de evaluación y la IA en Secundaria</h4>
+                        <p class="pub-desc">Cómo optimizar el tiempo docente empleando modelos inteligentes para generar sistemas de evaluación precisos.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Revista GRAÓ 12-18 (N. 2)</span>
+                        <a href="https://www.grao.com/revistas/las-rubricas-de-evaluacion-y-la-ia-en-secundaria-91385" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 4 -->
+                <div class="pub-card" data-category="evaluation">
+                    <div>
+                        <div class="pub-meta">
+                            <span>COMPETENCIAS</span>
+                            <span>2024</span>
+                        </div>
+                        <h4 class="pub-title">Los proyectos interdisciplinares: una oportunidad para el trabajo por competencias</h4>
+                        <p class="pub-desc">Enfoques metodológicos integradores basados en el nuevo currículo escolar LOMLOE.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Revista CEP de Cádiz</span>
+                        <a href="https://www.revistacepcadiz.com/los-proyectos-interdisciplinares-una-oportunidad-para-el-trabajo-por-competencias/" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 5 -->
+                <div class="pub-card" data-category="methodology">
+                    <div>
+                        <div class="pub-meta">
+                            <span>DIDÁCTICA LENGUA</span>
+                            <span>2021</span>
+                        </div>
+                        <h4 class="pub-title">¡Tenemos que hablar! El trabajo de la lengua oral en Secundaria</h4>
+                        <p class="pub-desc">Estrategias y proyectos prácticos enfocados en dinamizar la oratoria en estudiantes de Secundaria.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Revista Andalucía Educativa</span>
+                        <a href="https://www.juntadeandalucia.es/educacion/portals/web/revista-andalucia-educativa/contenidos/-/contenidos/detalle/tenemos-que-hablar" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 6 -->
+                <div class="pub-card" data-category="methodology">
+                    <div>
+                        <div class="pub-meta">
+                            <span>GAMIFICACIÓN</span>
+                            <span>2019</span>
+                        </div>
+                        <h4 class="pub-title">Taller de muertos vivientes o cómo trabajar las biografías históricas</h4>
+                        <p class="pub-desc">Uso de narrativas inmersivas y dinámicas creativas para asimilar y procesar el contexto histórico literario.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Revista Educación 3.0</span>
+                        <a href="https://www.educaciontrespuntocero.com/experiencias/como-trabajar-biografia-historicas/" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 7 -->
+                <div class="pub-card" data-category="evaluation">
+                    <div>
+                        <div class="pub-meta">
+                            <span>SÉNECA</span>
+                            <span>2018</span>
+                        </div>
+                        <h4 class="pub-title">El camino más corto para evaluar por competencias es... ISéneca</h4>
+                        <p class="pub-desc">Guía para el uso y despliegue del cuaderno digital docente como herramienta ágil para evaluar competencias.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Blog EvaluAcción (AGAEVE)</span>
+                        <a href="http://evaluaccion.es/2018/11/22/el-camino-mas-corto-para-evaluar-por-competencias-es-iseneca/" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pub 8 -->
+                <div class="pub-card" data-category="methodology">
+                    <div>
+                        <div class="pub-meta">
+                            <span>ORTOGRAFÍA</span>
+                            <span>2017</span>
+                        </div>
+                        <h4 class="pub-title">Sin errores ortográficos... ¡Por fin!</h4>
+                        <p class="pub-desc">Sistemas innovadores y motivadores aplicados en el aula para superar las dificultades mecánicas de la escritura.</p>
+                    </div>
+                    <div class="pub-footer">
+                        <span class="pub-source">Cuadernos de Pedagogía</span>
+                        <a href="https://www.cuadernosdepedagogia.com/Content/Documento.aspx?params=H4sIAAAAAAAEAMtMSbF1CTEAAiMTMwszS7Wy1KLizPw8WyMDQ3MDU0MDkEBmWqVLfnJIZUGqbVpiTnEqAAWbkXI1AAAAWKE" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Medios -->
+    <section id="medios" class="section-padding">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-tag">&lt;// 04. MULTIMEDIA&gt;</span>
+                <h2 class="section-title">Colaboraciones en Medios y Podcast</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="media-grid">
+                
+                <!-- Radio -->
+                <div class="radio-card">
+                    <div class="radio-header-area">
+                        <div class="radio-header">
+                            <div class="radio-icon">
+                                <i class="fa-solid fa-tower-broadcast"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 700;">Emisión de Radio</h4>
+                                <p style="font-size: 12px; color: var(--text-muted);">Canal Sur Radio / RAI</p>
+                            </div>
+                        </div>
+                        <h3>Programa Andalucía Educativa</h3>
+                        <p>Participación y debate sobre la evolución pedagógica andaluza conducido por Charo Pérez. Un espacio de divulgación abierta.</p>
+                        
+                        <!-- Imagen00.jpg corregida para apuntar a la carpeta Imagenes de GitHub -->
+                        <div style="margin: 16px 0; overflow: hidden; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                            <img src="./Imagenes/Imagen00.jpg" alt="Imagen de Juan Manuel López Esparrell en un aula para Canal Sur" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                        </div>
+                    </div>
+                    <a href="https://www.canalsur.es/multimedia.html?id=1865146" target="_blank" class="btn-full">
+                        <i class="fa-solid fa-circle-play"></i> ESCUCHAR EMISIÓN
+                    </a>
+                </div>
+
+                <!-- Podcasts -->
+                <div class="podcast-list-card">
+                    <div class="podcast-header">
+                        <div class="podcast-title-area">
+                            <div class="podcast-icon">
+                                <i class="fa-solid fa-microphone-lines"></i>
+                            </div>
+                            <div>
+                                <h4>Podcast "Inteligencia Artificial y Educación"</h4>
+                                <p>Capítulos de análisis teórico-práctico en el aula</p>
+                            </div>
+                        </div>
+                        <span class="podcast-badge">iVoox</span>
+                    </div>
+
+                    <div class="episodes-container">
+                        <!-- Ep 1 -->
+                        <div class="episode-row">
+                            <div class="episode-info">
+                                <span>EPISODIO 71</span>
+                                <h5>JuglarÍA: Uniendo la IA con el arte lírico en las aulas</h5>
+                            </div>
+                            <a href="https://go.ivoox.com/rf/129923093?utm_source=embed_audio_new&utm_medium=share&utm_campaign=new_embeds" target="_blank" class="episode-btn">
+                                Escuchar <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+                        <!-- Ep 2 -->
+                        <div class="episode-row">
+                            <div class="episode-info">
+                                <span>EPISODIO 72</span>
+                                <h5>JuglarÍA (Parte 2): Puesta en marcha de la experiencia</h5>
+                            </div>
+                            <a href="https://go.ivoox.com/rf/130293780?utm_source=embed_audio_new&utm_medium=share&utm_campaign=new_embeds" target="_blank" class="episode-btn">
+                                Escuchar <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+                        <!-- Ep 3 -->
+                        <div class="episode-row">
+                            <div class="episode-info">
+                                <span>EPISODIO 96</span>
+                                <h5>Debate IA y Educación (I Parte)</h5>
+                            </div>
+                            <a href="https://go.ivoox.com/rf/136637852?utm_source=embed_audio_new&utm_medium=share&utm_campaign=new_embeds" target="_blank" class="episode-btn">
+                                Escuchar <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+                        <!-- Ep 4 -->
+                        <div class="episode-row">
+                            <div class="episode-info">
+                                <span>EPISODIO 97</span>
+                                <h5>Debate IA y Educación (II Parte)</h5>
+                            </div>
+                            <a href="https://go.ivoox.com/rf/136637969?utm_source=embed_audio_new&utm_medium=share&utm_campaign=new_embeds" target="_blank" class="episode-btn">
+                                Escuchar <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+                        <!-- Ep 5 -->
+                        <div class="episode-row">
+                            <div class="episode-info">
+                                <span>EPISODIO 98</span>
+                                <h5>Debate IA y Educación (III Parte)</h5>
+                            </div>
+                            <a href="https://go.ivoox.com/rf/136638073?utm_source=embed_audio_new&utm_medium=share&utm_campaign=new_embeds" target="_blank" class="episode-btn">
+                                Escuchar <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <i class="fa-solid fa-paper-plane" style="font-size: 32px; color: var(--secondary); margin-bottom: 20px;"></i>
+                <h3>¿Quieres proponer una formación o colaborar?</h3>
+                <p>Escríbeme directamente por correo electrónico para proponer ponencias, talleres, colaboraciones editoriales o resolver dudas pedagógicas.</p>
+                <a href="mailto:lopezesparrell@gmail.com" class="btn-large-contact" style="margin-bottom: 24px;">
+                    <i class="fa-solid fa-envelope"></i> Enviar Correo a lopezesparrell@gmail.com
+                </a>
+                
+                <!-- Enlaces Directos a Redes Solicitadas -->
+                <div style="display: flex; justify-content: center; gap: 16px; margin-top: 12px;">
+                    <a href="https://www.instagram.com/lopezesparrell/" target="_blank" class="btn-secondary" style="font-size: 12px; border-color: var(--secondary);">
+                        <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Instagram
+                    </a>
+                    <a href="https://x.com/LopezEsparrell" target="_blank" class="btn-secondary" style="font-size: 12px; border-color: var(--primary-dark);">
+                        <i class="fa-brands fa-x-twitter"></i> Twitter / X
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">EL LOCO DE LA MOCHILA</div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">
+                Esta web ha sido creada para el blog educativo 
+                <a class="footer-link" href="https://blogsaverroes.juntadeandalucia.es/ellocodelamochila" target="_blank">
+                    El loco de la mochila
+                </a>.
+            </p>
+            
+            <div class="footer-socials">
+                <a href="https://x.com/LopezEsparrell" target="_blank" class="social-link" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/lopezesparrell/" target="_blank" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://blogsaverroes.juntadeandalucia.es/ellocodelamochila" class="social-link" target="_blank" title="Blog Oficial"><i class="fa-solid fa-globe"></i></a>
+            </div>
+            
+            <p class="copyright">&copy; 2026 Juan Manuel López Esparrell. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Filtrado y Lógica del Carrusel -->
+    <script>
+        /* --- Lógica del Carrusel Interactivo --- */
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let autoPlayInterval;
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function moveCarousel(direction) {
+            showSlide(currentSlide + direction);
+            resetAutoplay();
+        }
+
+        function setCarouselSlide(index) {
+            showSlide(index);
+            resetAutoplay();
+        }
+
+        function startAutoplay() {
+            autoPlayInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000); // Cambio automático de diapositiva cada 5 segundos
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoPlayInterval);
+            startAutoplay();
+        }
+
+        // Inicializar el autoplay del carrusel una vez el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            startAutoplay();
+        });
+
+        /* --- Lógica del Filtrado de Publicaciones --- */
+        function applyFilter(category) {
+            // Actualizar botones de filtro
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            const activeBtn = event ? event.target : null;
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+
+            // Filtrar las publicaciones
+            const cards = document.querySelectorAll('.pub-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    if (card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
