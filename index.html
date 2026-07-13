@@ -178,8 +178,8 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
+            grid-template-columns: 1.4fr 0.6fr; /* Distribución de columnas optimizada */
+            gap: 48px;
             align-items: center;
         }
 
@@ -256,15 +256,18 @@
             transform: translateY(-2px);
         }
 
-        /* Tarjeta de Perfil Hero */
+        /* Tarjeta de Perfil Hero - Modificada más pequeña y compacta */
         .profile-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-md);
+            padding: 24px; /* Relleno más ajustado */
+            box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
+            max-width: 320px; /* Ancho máximo delimitado */
+            width: 100%;
+            margin-left: auto; /* Empujado hacia el extremo derecho */
         }
 
         .profile-card::before {
@@ -273,19 +276,19 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 6px;
+            height: 5px;
             background: linear-gradient(to right, var(--primary), var(--secondary));
         }
 
         .avatar-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 16px; /* Margen inferior reducido */
         }
 
         .avatar-circle {
-            width: 120px;
-            height: 120px;
+            width: 96px; /* Diámetro de imagen más compacto */
+            height: 96px;
             border-radius: 50%;
             background-color: var(--secondary-light);
             border: 3px solid white;
@@ -308,22 +311,22 @@
         .profile-info {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px; /* Espaciado más sutil entre filas */
         }
 
         .info-row {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 8px;
-            font-size: 14px;
+            padding-bottom: 6px;
+            font-size: 13px; /* Tamaño de letra ligeramente más pequeño */
         }
 
         .info-row span:first-child {
             font-weight: 700;
             color: var(--text-muted);
             font-family: var(--font-mono);
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .info-row span:last-child {
@@ -446,10 +449,10 @@
             color: var(--text-muted);
         }
 
-        /* --- ESTILOS DEL CARRUSEL INTERACTIVO (OPTIMIZADO Y SIN TEXTO AL PIE) --- */
+        /* --- ESTILOS DEL CARRUSEL INTERACTIVO --- */
         .carousel-outer {
             margin: 40px auto;
-            max-width: 650px; /* Reducido para no destacar excesivamente */
+            max-width: 650px; /* Tamaño comedido */
             width: 100%;
         }
 
@@ -477,7 +480,7 @@
             box-shadow: var(--shadow-md);
             border: 1px solid var(--border-color);
             background-color: var(--bg-card);
-            aspect-ratio: 16 / 9; /* Relación de aspecto más contenida */
+            aspect-ratio: 16 / 9;
         }
 
         @media (max-width: 640px) {
@@ -557,7 +560,7 @@
 
         .carousel-dots {
             position: absolute;
-            bottom: 16px; /* Desplazado elegantemente al borde inferior al no tener captions */
+            bottom: 16px; /* Desplazado elegantemente al borde inferior */
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -1078,10 +1081,13 @@
         }
 
         /* --- RESPONSIVIDAD --- */
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            .profile-card {
+                margin: 0 auto; /* Centrar tarjeta en pantallas pequeñas */
             }
             .about-grid {
                 grid-template-columns: 1fr;
@@ -1090,7 +1096,7 @@
                 padding: 0 16px;
             }
             .nav-menu {
-                display: none; /* Simplificado para evitar colapsos complejos sin Tailwind */
+                display: none; 
             }
         }
     </style>
@@ -1154,12 +1160,12 @@
                 </div>
             </div>
 
-            <!-- Ficha resumida -->
+            <!-- Ficha resumida - Modificada a más compacta y alineada -->
             <div class="profile-card">
                 <div class="avatar-container">
                     <div class="avatar-circle">
                         <!-- Imagen01.jpg real agregada y centrada óptimamente -->
-                        <img src="imagenes/Imagen01.jpg" alt="Juan Manuel López Esparrell">
+                        <img src="Imagen01.jpg" alt="Juan Manuel López Esparrell">
                     </div>
                 </div>
                 <div class="profile-info">
@@ -1212,7 +1218,7 @@
                     </p>
 
                     <p>
-                        En los últimos cursos me he centrado sobre todo en formaciones sobre el <strong>uso educativo y ético de la inteligencia artificial</strong>, pero también he impartido formaciones dirigidas al profesorado sobre evaluación formativa con el cuaderno de Séneca, diseño de situaciones de aprendizaje, currículo LOMLOE, competencia en comunicación lingüística, etc.
+                        En los últimos cursos me he centrado sobre todo en formaciones sobre el <strong>uso educativo y ético de la inteligencia artificial</strong>, pero también he impedido formaciones dirigidas al profesorado sobre evaluación formativa con el cuaderno de Séneca, diseño de situaciones de aprendizaje, currículo LOMLOE, competencia en comunicación lingüística, etc.
                     </p>
 
                     <p>
@@ -1254,23 +1260,23 @@
                     <div class="carousel-slides" id="carouselSlides">
                         <!-- Diapositiva 1 (Imagen02) -->
                         <div class="carousel-slide active">
-                            <img src="imagenes/Imagen02.JPG" alt="Reunión práctica de formación con profesorado">
+                            <img src="Imagen02.jpg" alt="Reunión práctica de formación con profesorado">
                         </div>
                         <!-- Diapositiva 2 (Imagen03) -->
                         <div class="carousel-slide">
-                            <img src="imagenes/Imagen03.JPG" alt="Ponencia en CEP Vélez-Málaga sobre cuaderno Séneca">
+                            <img src="Imagen03.JPG" alt="Ponencia en CEP Vélez-Málaga sobre cuaderno Séneca">
                         </div>
                         <!-- Diapositiva 3 (Imagen04) -->
                         <div class="carousel-slide">
-                            <img src="imagenes/Imagen04.JPG" alt="Presentación didáctica en pizarra digital">
+                            <img src="Imagen04.JPG" alt="Presentación didáctica en pizarra digital">
                         </div>
                         <!-- Diapositiva 4 (Imagen05) -->
                         <div class="carousel-slide">
-                            <img src="imagenes/Imagen05.JPG" alt="Taller práctico en aula de profesores">
+                            <img src="Imagen05.jpg" alt="Taller práctico en aula de profesores">
                         </div>
                         <!-- Diapositiva 5 (Imagen06) -->
                         <div class="carousel-slide">
-                            <img src="imagenes/Imagen06.JPG" alt="Uso de iSéneca para móviles en el CEP">
+                            <img src="Imagen06.JPG" alt="Uso de iSéneca para móviles en el CEP">
                         </div>
                     </div>
                     
@@ -1473,7 +1479,7 @@
                     </div>
                     <div class="pub-footer">
                         <span class="pub-source">Revista Andalucía Educativa</span>
-                        <a href="https://www.juntadeandalucia.es/education/portals/web/revista-andalucia-educativa/contenidos/-/contenidos/detalle/tenemos-que-hablar" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://www.juntadeandalucia.es/educacion/portals/web/revista-andalucia-educativa/contenidos/-/contenidos/detalle/tenemos-que-hablar" target="_blank" class="pub-link">Leer <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
 
@@ -1558,7 +1564,7 @@
                         
                         <!-- Imagen00.jpg agregada en la tarjeta de Radio -->
                         <div style="margin: 16px 0; overflow: hidden; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
-                            <img src="imagenes/Imagen00.jpg" alt="Imagen de Juan Manuel López Esparrell en un aula para Canal Sur" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                            <img src="Imagen00.jpg" alt="Imagen de Juan Manuel López Esparrell en un aula para Canal Sur" style="width: 100%; height: auto; display: block; object-fit: cover;">
                         </div>
                     </div>
                     <a href="https://www.canalsur.es/multimedia.html?id=1865146" target="_blank" class="btn-full">
